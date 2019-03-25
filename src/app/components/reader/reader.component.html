@@ -1,0 +1,5 @@
+
+<h4>{{currentStoryPart.Title}}</h4>
+<p>{{currentStoryPart.Content}}</p>
+<app-choice *ngIf="currentStoryPart.Choice" [choice]="currentStoryPart.Choice"></app-choice>
+<h4 class="option" (mousedown)="startOver()" *ngIf="!currentStoryPart.Choice">Start Over</h4>

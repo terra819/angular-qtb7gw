@@ -1,0 +1,7 @@
+<h4>{{choice.Title}}</h4>
+<p>{{choice.Description}}</p>
+<div *ngFor="let option of choice.Options" class="option"
+  (mousedown)="answer(option)">
+  <h4>{{option.Title}}</h4>
+  <p>{{option.Description}}</p>
+</div>

@@ -1,0 +1,11 @@
+.option {
+    border: solid 2px black;
+    cursor: pointer;
+    padding: 0px 5px 0px 5px;
+    margin: 5px;
+
+    &:hover {
+        background: black;
+        color: white;
+    }
+}

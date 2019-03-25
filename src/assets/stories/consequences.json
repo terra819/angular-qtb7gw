@@ -1,0 +1,159 @@
+{
+  "Characters": [
+    {
+      "Name": "Alyssa",
+      "Health": 100,
+      "Backpack": {}
+    },
+    {
+      "Name": "James",
+      "Health": 100,
+      "Backpack": {}
+    }
+  ],
+  "Back": [],
+  "Next": [
+    {
+      "If": "true",
+      "Show": "true",
+      "Title": "Chapter 1",
+      "Content": "Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. ",
+      "Choice": {
+        "Title": "Choose a character",
+        "Description": "Choose your destiny. Choose wisely",
+        "Options": [
+          {
+            "Title": "Alyssa",
+            "Description": "Alyssa is...Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..",
+            "Consequences": [
+              {
+                "Title": "Alyssa",
+                "Description": "Congrats you have chosen Alyssa",
+                "Action": "story.Characters.filter(x => x.Name === 'Alyssa')[0].Active = true"
+              }
+            ]
+          },
+          {
+            "Title": "James",
+            "Description": "James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...",
+            "Consequences": [
+              {
+                "Title": "James",
+                "Description": "Congrats you have chosen James",
+                "Action": "story.Characters.filter(x => x.Name === 'James')[0].Active = true"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "If": "story.Characters.filter(x => x.Active)[0].Name === 'Alyssa'",
+      "Show": "true",
+      "Title": "Chapter 2",
+      "Content": "Now that you've chosen your character, you must read some of the story, then choose something else. good luck!",
+      "Choice": {
+        "Title": "Choose Alyssa's hair color",
+        "Description": "Blue or pinK?",
+        "Options": [
+          {
+            "Title": "Blue",
+            "Description": "OOh pretty blue!",
+            "Consequences": [
+              {
+                "Title": "Blue",
+                "Description": "Love it!",
+                "Action": "story.Characters.filter(x => x.Active)[0].HairColor = 'Blue'"
+              }
+            ]
+          },
+          {
+            "Title": "Pink",
+            "Description": "We love PInk",
+            "Consequences": [
+              {
+                "Title": "Pink",
+                "Description": "Awesome!",
+                "Action": "story.Characters.filter(x => x.Active)[0].HairColor = 'Pink'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "If": "story.Characters.filter(x => x.Active)[0].Name === 'James'",
+      "Show": "true",
+      "Title": "Chapter 2",
+      "Content": "You're gonna love James. Next you'll have to pick his hair color",
+      "Choice": {
+        "Title": "Choose James's hair color",
+        "Description": "Brown or pinK?",
+        "Options": [
+          {
+            "Title": "Brown",
+            "Description": "Cool brown. The color of dirt.",
+            "Consequences": [
+              {
+                "Title": "Brown",
+                "Description": "Love it!",
+                "Action": "story.Characters.filter(x => x.Active)[0].HairColor = 'Brown'"
+              }
+            ]
+          },
+          {
+            "Title": "Pink",
+            "Description": "We love PInk",
+            "Consequences": [
+              {
+                "Title": "Pink",
+                "Description": "Awesome!",
+                "Action": "story.Characters.filter(x => x.Active)[0].HairColor = 'Pink'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "If": "true",
+      "Show": "story.Characters.filter(x => x.Active)[0].HairColor !== 'Pink'",
+      "Title": "Chapter 3",
+      "Content": "If Pink was chosen as the haircolor, this portion won't be shown to the user, and the computer will decide",
+      "Choice": {
+        "Title": "Choose setting",
+        "Description": "Choose fight location. battle royale. ",
+        "Options": [
+          {
+            "Title": "Desert",
+            "Description": "Hot, sweaty, uck. ",
+            "Consequences": [
+              {
+                "Title": "Desert",
+                "Description": "Sweaty it is.",
+                "Action": "story.Setting = 'Desert'"
+              }
+            ]
+          },
+          {
+            "Title": "Forest",
+            "Description": "Lots of hiding places. lots of heavy things to fall on you.",
+            "Consequences": [
+              {
+                "Title": "Forrest",
+                "Description": "Watch out for that treeee!",
+                "Action": "story.Setting = 'Forrest'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "If": "true",
+      "Show": "true",
+      "Title": "Chapter 4",
+      "Content": "The End"
+    }
+  ]
+}

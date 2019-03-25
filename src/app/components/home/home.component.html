@@ -1,0 +1,4 @@
+<div *ngFor="let item of stories" (mousedown)="begin(item.File)" class="option">
+    <h4>{{item.Title}}</h4>
+    <p>{{item.Summary}}</p>
+</div>
