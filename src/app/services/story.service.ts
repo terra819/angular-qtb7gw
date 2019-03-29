@@ -64,8 +64,6 @@ export class StoryService {
 
   advanceStory = function (storyPart) {
     this._currentStory.value.Back.push(storyPart);
-    this._currentStory.value.Next.splice(0, 1);
-    this.next();
   }
 
   autoAnswer(storyPart: StoryPart) {
