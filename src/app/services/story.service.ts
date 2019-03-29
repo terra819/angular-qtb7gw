@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Story } from '../models/story';
 import { StoryPart } from '../models/storyPart';
-var json  = require('../../assets/stories.json');
+var json = require('../../assets/stories.json');
 
 @Injectable({
   providedIn: 'root'
@@ -34,25 +34,38 @@ export class StoryService {
 
   next() {
     // loop through next parts and evaluate if and show
-    const story = this._currentStory.value;
+    var story = this._currentStory.value;
     if (this._currentStory.value.Next.length > 0) {
-      for (const next of this._currentStory.value.Next) {
+      for (var i = 0, a = this._currentStory.value.Next; i < a.length; i++) {
+        var next = a[i];
         if (eval(next.If)) {
           if (eval(next.Show)) {
             // show this to the user
             this._currentStoryPart.next(next);
             this._currentStory.next(story);
             break;
-          } else {
+          }
+          else {
             // auto answer this without showing user
             this.autoAnswer(next);
           }
         }
+        else {
+          // this isn't part of the story anymore
+          this.advanceStory(next);
+        }
       }
-    } else {
+    }
+    else {
       // no more story left
       this.startOver();
     }
+  }
+
+  advanceStory = function (storyPart) {
+    this._currentStory.value.Back.push(storyPart);
+    this._currentStory.value.Next.splice(0, 1);
+    this.next();
   }
 
   autoAnswer(storyPart: StoryPart) {
