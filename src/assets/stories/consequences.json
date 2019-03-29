@@ -2,13 +2,11 @@
   "Characters": [
     {
       "Name": "Alyssa",
-      "Health": 100,
-      "Backpack": {}
+      "Health": 100
     },
     {
       "Name": "James",
-      "Health": 100,
-      "Backpack": {}
+      "Health": 100
     }
   ],
   "Back": [],
@@ -109,6 +107,40 @@
                 "Title": "Pink",
                 "Description": "Awesome!",
                 "Action": "story.Characters.filter(x => x.Active)[0].HairColor = 'Pink'"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "If": "true",
+      "Show": "true",
+      "Title": "Choose a weapon",
+      "Content": "Great! Got your character, got your hair, now select your weapon",
+      "Choice": {
+        "Title": "Choose your weapon",
+        "Description": "Everyone loves a sabre, but a giant hammer is where it's at",
+        "Options": [
+          {
+            "Title": "Sabre",
+            "Description": "Sharp, shiny, elegant. Understated melee.",
+            "Consequences": [
+              {
+                "Title": "Sabre",
+                "Description": "Swish!",
+                "Action": "story.Characters.filter(x => x.Active)[0].Weapon = 'Sabre'"
+              }
+            ]
+          },
+          {
+            "Title": "Hammer",
+            "Description": "Studded with spikes, weighs a ton, but makes a splash",
+            "Consequences": [
+              {
+                "Title": "Hammer",
+                "Description": "Hammer Smash!",
+                "Action": "story.Characters.filter(x => x.Active)[0].Weapon = 'Hammer'"
               }
             ]
           }
