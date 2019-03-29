@@ -35,25 +35,22 @@ export class StoryService {
   next() {
     // loop through next parts and evaluate if and show
     var story = this._currentStory.value;
-    if (this._currentStory.value.Next.length > 0) {
-      for (var i = 0, a = this._currentStory.value.Next; i < a.length; i++) {
-        var next = a[i];
-        if (eval(next.If)) {
-          if (eval(next.Show)) {
-            // show this to the user
-            this._currentStoryPart.next(next);
-            this._currentStory.next(story);
-            break;
-          }
-          else {
-            // auto answer this without showing user
-            this.autoAnswer(next);
-          }
+    if (story.Next.length > 0) {
+      var next = story.Next[0];
+      if (eval(next.If)) {
+        if (eval(next.Show)) {
+          // show this to the user
+          this._currentStoryPart.next(next);
+          this._currentStory.next(story);
         }
         else {
-          // this isn't part of the story anymore
-          this.advanceStory(next);
+          // auto answer this without showing user
+          this.autoAnswer(next);
         }
+      }
+      else {
+        // this isn't part of the story anymore
+        this.advanceStory(next);
       }
     }
     else {
@@ -62,8 +59,10 @@ export class StoryService {
     }
   }
 
-  advanceStory = function (storyPart) {
+  advanceStory(storyPart) {
     this._currentStory.value.Back.push(storyPart);
+    this._currentStory.value.Next.splice(0, 1);
+    this.next();
   }
 
   autoAnswer(storyPart: StoryPart) {
@@ -82,8 +81,8 @@ export class StoryService {
     const currentPart = this._currentStoryPart.value;
     currentPart.Choice.Option = option;
     currentPart.Choice.Consequence = randomConsequence;
-    this._currentStory.value.Back.push(currentPart);
-    this._currentStory.value.Next.splice(0, 1);
+    story.Back.push(currentPart);
+    story.Next.splice(0, 1);
     eval(randomConsequence.Action);
     this._currentStory.next(story);
     this.next();
