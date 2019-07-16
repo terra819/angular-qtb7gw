@@ -15,30 +15,30 @@
       "If": "true",
       "Show": "true",
       "Title": "Chapter 1",
-      "Content": "Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. Intro to the story. ",
+      "Content": "Our story begins on an ordinary day in an ordinary village, during an ordinary lunch hour. Alyssa and James were discussing their latest psych assignment when they noticed a slight rumbling in the distance. They both directed their attention toward the cafe's large windows and noticed a small but growing cloud of dust coming down main street, headed in their direction. James stood up from the booth and squinted at the sight. He walked toward the door and opened it. He and Alyssa stood on the sidewalk in front of the cafe as the foggy visitor lurched closer. </br>&quot;What is that?&quot; asked Alyssa. &quot;I don't kno----AAAH!&quot; -James stumbled over a large crack in the sidewalk and fell headfirst into the wriggling, opaque mass. &quot;I'll get help, I'll be right back&quot; Alyssa shouted at the ball now floating where James would have landed.",
       "Choice": {
-        "Title": "Choose a character",
-        "Description": "Choose your destiny. Choose wisely",
+        "Title": "Who do you stay with?",
+        "Description": "Alyssa has gone to find help for James. James has tripped and landed in an unknown situation. Pick a character to follow.",
         "Options": [
           {
-            "Title": "Alyssa",
-            "Description": "Alyssa is...Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..Alyssa is..",
-            "Consequences": [
-              {
-                "Title": "Alyssa",
-                "Description": "Congrats you have chosen Alyssa",
-                "Action": "story.Characters.filter(x => x.Name === 'Alyssa')[0].Active = true"
-              }
-            ]
-          },
-          {
             "Title": "James",
-            "Description": "James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...James is...",
+            "Description": "James is a 19 year old psychology major. He is a bit accident prone but is good with analyzing people in situations.",
             "Consequences": [
               {
                 "Title": "James",
                 "Description": "Congrats you have chosen James",
                 "Action": "story.Characters.filter(x => x.Name === 'James')[0].Active = true"
+              }
+            ]
+          },
+          {
+            "Title": "Alyssa",
+            "Description": "Alyssa is a 19 year old computer sciences major. She played some sports in high school, but is more gifted with electronics.",
+            "Consequences": [
+              {
+                "Title": "Alyssa",
+                "Description": "Congrats you have chosen Alyssa",
+                "Action": "story.Characters.filter(x => x.Name === 'Alyssa')[0].Active = true"
               }
             ]
           }
